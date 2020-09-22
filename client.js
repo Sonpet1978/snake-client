@@ -8,7 +8,7 @@ const connect = function() {
     host: '10.0.2.15',
     port: 50541
   });
-  conn.write('Move: up');
+    conn.write('Move: up');
   // interpret incoming data as text
   conn.setEncoding('utf8'); 
 
