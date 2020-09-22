@@ -1,17 +1,20 @@
-//#!/usr/bin/env node
-const connect = function() {
-    const conn = net.createConnection({ 
-      host: '10.0.2.15',
-      port: 50541
-    });
-    // interpret incoming data as text
-    conn.setEncoding('utf8'); 
-  
-    return conn;
-  }
-  
-  //Sonyaadd
+const net = require('net');
 
-  console.log('Connecting ...');
-  connect(); 
+/**
+ * Establishes connection with the game server
+ */
+const connect = function() {
+  const conn = net.createConnection({ 
+    host: '10.0.2.15',
+    port: 50541
+  });
+  conn.write('Move: up');
+  // interpret incoming data as text
+  conn.setEncoding('utf8'); 
+
   
+  return conn;
+}
+
+console.log('Connecting ...');
+connect();
