@@ -1,8 +1,8 @@
 const net = require('net');
-
+const { IP, PORT, NAME } = require('./constants');
 const connection = net.createConnection({ 
-    host: '10.0.2.15',
-    port: 50541
+    host: IP,
+    port: PORT
   });
 
  const setupInput = function() {
@@ -22,7 +22,7 @@ const connection = net.createConnection({
    } else if (key === 'a') {
      connection.write('Move: left');
    } else if (key === 's') {
-     connection.write('Move: down');
+    connection.write('Say: send fudge!');
    } else if (key === 'd') {
      connection.write('Move: right');
    };
