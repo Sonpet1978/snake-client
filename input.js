@@ -1,7 +1,11 @@
-let connection;
+const net = require('net');
 
- const setupInput = function(conn) {
-   connection = conn;
+const connection = net.createConnection({ 
+    host: '10.0.2.15',
+    port: 50541
+  });
+
+ const setupInput = function() {
    const stdin = process.stdin;
    stdin.setRawMode(true);
    stdin.setEncoding('utf8');
